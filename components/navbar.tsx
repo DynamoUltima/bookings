@@ -37,6 +37,10 @@ const Navbar = () => {
                     <p>Pricing</p>
                     <p>Careers</p> */}
                     {session && (
+                        <Link href={'/facility'}>
+                            Facility
+                        </Link>)}
+                    {session && (
                         <button onClick={handleLogout} className='btn bg-teal-300 text-white border-none hover:bg-[#2DD4BF] p-2 hover:text-white capitalize rounded-full'>
                             signout
                         </button>)}
