@@ -20,18 +20,60 @@ export const fetchAllVenue = async () => {
     return venue;
 }
 
+// export const bookVenue =async(data:any)=>{
+        
+//    console.log('called')
+//     const res = await fetch('api/book', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         //   'Authorization': `Bearer ${token}`
+//         },
+//         body: JSON.stringify(data)
+//       })
+//       const results= res.json
+//       console.log('results',res)
+//       return results;
+
+// }
+
+
 export const bookVenue =async(data:any)=>{
         
-   console.log('called')
-    const res = await fetch('api/book', {
-        method: 'POST',
+    console.log('called')
+    const response = await axios.post('api/book',{
+        data:data,
         headers: {
-          'Content-Type': 'application/json',
-        //   'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(data)
-      })
-      const results= res.json
-      return results;
+            'Content-Type': 'application/json',
+            // 'Authorization': `Bearer ${token}`
+        }
+    
+    });
+    const results= response.data;
+       console.log('results',results)
 
-}
+       
+       return results;
+ 
+ }
+
+
+
+ export const addVenue =async(data:any)=>{
+        
+    console.log('called')
+    const response = await axios.post('http://localhost:3000/api/venue/create',{
+        data:data,
+        headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': `Bearer ${token}`
+        }
+    
+    });
+    const results= response.data;
+       console.log('results',results)
+
+       
+       return results;
+ 
+ }

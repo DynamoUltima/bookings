@@ -12,6 +12,8 @@ const handler: NextApiHandler = async function handler(
 ) {
 
 
+
+    console.log('createVenue',req.body)
     
 
 
@@ -21,7 +23,7 @@ const handler: NextApiHandler = async function handler(
        
         // const { venueId, bookingId, bookedBy } = req.body
 
-        const venue = await Venue.create(req.body);
+        const venue = await Venue.create(req.body.data);
 
         if (venue._id) {
             //check if order Id exists

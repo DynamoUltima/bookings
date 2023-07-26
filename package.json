@@ -10,24 +10,33 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
     "@tanstack/react-query": "^4.29.19",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
     "date-fns": "^2.30.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "formik": "^2.4.2",
     "mongoose": "^7.4.0",
     "next": "13.4.10",
+    "next-auth": "^4.22.1",
+    "nodemailer": "^6.8.0",
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-calendar": "^4.4.0",
     "react-dom": "18.2.0",
+    "react-toastify": "^9.1.2",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/nodemailer": "^6.4.8"
   }
 }

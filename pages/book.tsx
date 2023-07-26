@@ -17,7 +17,7 @@ interface ITime {
 const Book = () => {
 
     const router = useRouter();
-    const { image, title, venueId } = router.query;
+    const { image, title, venueId,description,capacity,venueName,price } = router.query;
     const imageString = image! as string;
 
     console.log('images', image);
@@ -74,8 +74,8 @@ const Book = () => {
             try {
 
                 const dates = ["Sun Jul 23 2023 09:00:00 GMT+0000 (Greenwich Mean Time)", " Sun Jul 23 2023 10:00:00 GMT+0000 (Greenwich Mean Time)"]
-           
-         console.log('clicked')
+
+                console.log('clicked')
                 const data = { email: values.email, time: selectedTime, venue: venueId }
 
 
@@ -84,6 +84,9 @@ const Book = () => {
                 //date
                 const results = await bookVenue(data);
                 console.log(results);
+                if (results.message) {
+                    router.back()
+                }
 
                 //send date and email
 
@@ -117,7 +120,7 @@ const Book = () => {
 
         selectedButtons.forEach((items: number) => {
             let date = times![items]
-            console.log('added',date);
+            console.log('added', date);
 
             finalDates.push(date)
 
@@ -161,6 +164,7 @@ const Book = () => {
         //   console.log(results)
         console.log('selected time', selectedTime);
 
+
     }
 
     // const intervalTime =add(time, { minutes: 30 }
@@ -174,12 +178,18 @@ const Book = () => {
             <div className="relative h-20 w-20 flex-shrink-0">
                 <Image
                     src={imageString}
-                    alt={"facilit"}
+                    alt={"facility"}
                     className="rounded-full object-cover"
                     fill
                     sizes="60px"
                 />
             </div>
+
+        <div> {venueName!}</div>
+        <div> {description}</div>
+        <div> {capacity} seater</div>
+
+        <div>${price!}</div>
 
 
             <form onSubmit={formik.handleSubmit} autoComplete="off" className="mt-8 space-y-0" action="#" method="POST">
@@ -225,8 +235,8 @@ const Book = () => {
 
                             </div>
                             {/* we are going to  send date, time  , user details?  to the db */}
-                            <button  type="submit" className="bg-blue-500 rounded-md shadow-md text-white p-4 max-w-lg"
-                                // onClick={() => setDate({ justDate: null, dateTime: null })}
+                            <button type="submit" className="bg-blue-500 rounded-md shadow-md text-white p-4 max-w-lg"
+                            // onClick={() => setDate({ justDate: null, dateTime: null })}
 
                             >
                                 Book Facility

@@ -1,30 +1,15 @@
-import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 // import gradcelaImage from "/assets/svg/GradcelaLogo.svg"
+// import { useSession } from "next-auth/react";
 
+const AdminNavbar = () => {
 
-const Navbar = () => {
+    // const { data: session } = useSession();
 
-    const { data: session, status, } = useSession();
-    const router = useRouter();
-
-    const handleLogout = async () => {
-        const data = await signOut({ redirect: false, });
-        console.log('sign out')
-        console.log(data)
-        router.push('/')
-
-    }
-
-     
-
-    console.log(status)
-    
     return (
 
-        <div className='shadow-lg divide-y px-4'>
+        <div className=''>
             <div className="flex flex-col lg:flex-row justify-center  lg:justify-between items-center gap-5">
                 {/* <img src="/assets/images/gradcela logo.png" alt="logo" /> */}
                 {/* <Image alt="logo" layout="contain" src={gradcelaImage} /> */}
@@ -36,12 +21,8 @@ const Navbar = () => {
                     {/* <p>Teacher</p>
                     <p>Pricing</p>
                     <p>Careers</p> */}
-                    {session && (
-                        <button onClick={handleLogout} className='btn bg-teal-300 text-white border-none hover:bg-[#2DD4BF] p-2 hover:text-white capitalize rounded-full'>
-                            signout
-                        </button>)}
                 </div>
-                <Link href={'/admin/adminAuth'}>
+                <Link href={'/adminDashboard'}>
                     <button className='btn bg-white text-teal-300 border-none hover:bg-[#2DD4BF] p-2 hover:text-white capitalize rounded-full'>
                         Admin
                     </button>
@@ -51,15 +32,8 @@ const Navbar = () => {
 
 
             </div>
-
-
-
-
-
-
         </div>
-
-    );
+    )
 }
 
-export default Navbar;
+export default AdminNavbar

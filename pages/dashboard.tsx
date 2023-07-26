@@ -21,6 +21,7 @@ interface IAuthor {
 
 
 const Dashboard = (props:{venue?:IVenue[]}) => {
+
     return (
         <div className="bg-white p-4">
             <div className="flex flex-col space-y-4">
@@ -31,9 +32,11 @@ const Dashboard = (props:{venue?:IVenue[]}) => {
                             <RecentCard
                                 key={venue._id!}
                                 image={venue.venueImage}
-                                title={venue.venueName}
+                                venueName={venue.venueName}
                                 description={venue.description}
+                                capacity={venue.capacity}
                                 venueId ={venue._id}
+                                price={venue.price}
                             />
                         )
 
