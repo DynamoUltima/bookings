@@ -65,7 +65,7 @@ const handler: NextApiHandler = async function handler(
              const mailOptions ={
                 from:'kabakaba.dev@gmail.com',
                 to:email,
-                subject: 'Booking  Apointments',
+                subject: 'Your Booking  Apointments',
                 text: formattedArray.toString()
             }
 

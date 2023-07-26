@@ -144,11 +144,11 @@ const AdminAuth = () => {
 
 
                         <div className="text-sm flex items-center py-4">
-                            <Link href={'/auth/signup'}>
+                            {/* <Link href={'/auth/signup'}>
                                 <p className="font-medium text-[#2DD4BF] hover:text-[#2DD4BF]">
                                     Create an account
                                 </p>
-                            </Link>
+                            </Link> */}
                         </div>
 
 

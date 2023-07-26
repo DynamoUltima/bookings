@@ -106,7 +106,7 @@ const AddVenue = () => {
                             onChange={formik.handleChange}
                             required
                             className="appearance-none rounded-lg shadow-sm  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-[#2DD4BF] focus:border-[#2DD4BF] focus:z-10 sm:text-sm"
-                            placeholder="Paste Image link"
+                            placeholder="Paste Image link from unsplash "
                         />
                     </div>
                 </div>
