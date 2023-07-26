@@ -62,7 +62,7 @@ export const bookVenue =async(data:any)=>{
  export const addVenue =async(data:any)=>{
         
     console.log('called')
-    const response = await axios.post('http://localhost:3000/api/venue/create',{
+    const response = await axios.post('https://bookings-omega-seven.vercel.app/api/venue/create',{
         data:data,
         headers: {
             'Content-Type': 'application/json',

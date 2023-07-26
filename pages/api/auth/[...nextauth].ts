@@ -61,7 +61,7 @@ export default NextAuth({
 
           let user;
           if(!firstName){
-            const response = await axios.post('http://localhost:3000/api/admin/login', {
+            const response = await axios.post('https://bookings-omega-seven.vercel.app/api/admin/login', {
               email, password
             })
     
